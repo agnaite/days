@@ -8,7 +8,7 @@ var AllDays = React.createClass({
   render() {
     var days = this.state.days.map((day) => {
       return (
-        <div>
+        <div key={day.id}>
           <h4>{ day.count }</h4>
         </div>
       )

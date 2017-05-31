@@ -1,8 +1,8 @@
 var Header = React.createClass({
   render(){
     return (
-      <div>
-        <h1>Hello!</h1>
+      <div className='nav'>
+        <h3>days</h3>
       </div>
     )
   }

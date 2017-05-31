@@ -5,7 +5,7 @@ var AllDays = React.createClass({
   render() {
     var days = this.props.days.map((day) => {
       return (
-        <div key={day.id}>
+        <div className='container' key={day.id}>
           <Day day={day}
                handleUpdate={this.onUpdate} />
         </div>
@@ -13,7 +13,7 @@ var AllDays = React.createClass({
     });
 
     return (
-      <div>
+      <div className="day-wrapper">
         {days}
       </div>
     )

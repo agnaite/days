@@ -1,22 +1,18 @@
 var AllDays = React.createClass({
-  getInitialState() {
-    return { days: [] }
-  },
-  componentDidMount(){
-    $.getJSON('/api/v1/days.json', (response) => { this.setState({ days: response }) });
-  },
   render() {
-    var days = this.state.days.map((day) => {
+    var days = this.props.days.map((day) => {
       return (
         <div key={day.id}>
-          <h4>{ day.count }</h4>
+          <Day day={day}
+               addDay={this.props.addDay}
+          />
         </div>
       )
     });
 
     return (
       <div>
-        { days }
+        {days}
       </div>
     )
   }

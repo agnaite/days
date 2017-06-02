@@ -23,6 +23,7 @@ gem 'uglifier', '>= 1.3.0'
 # custom
 gem 'responders'
 gem 'react-rails'
+gem 'whenever', :require => false
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

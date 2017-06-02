@@ -20,6 +20,10 @@ var Body = React.createClass({
     days.push(day);
     this.setState({ days: days });
   },
+  handleSubmit(day) {
+    var newState = this.state.days.concat(day);
+    this.setState({ days: newState })
+  },
   render(){
     return (
       <div>

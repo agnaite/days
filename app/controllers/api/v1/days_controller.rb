@@ -1,7 +1,7 @@
 class Api::V1::DaysController < Api::V1::BaseController
 
   def index
-    respond_with Day.order("created_at").last
+    respond_with Day.all
   end
 
   def update

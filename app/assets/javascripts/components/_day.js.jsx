@@ -9,7 +9,7 @@ var Day = React.createClass({
     var hours = minutes / 60;
     var days = Math.floor(hours / 24)
 
-    var day = {id: id, count: minutes};
+    var day = {id: id, count: days};
     this.props.handleUpdate(day);
   },
   render(){

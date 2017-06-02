@@ -1,11 +1,12 @@
 var Body = React.createClass({
   getInitialState() {
-    return { days: [] }
+    return { days: 0 }
   },
   componentDidMount(){
     $.getJSON('/api/v1/days.json', (response) => { this.setState({ days: response }) });
   },
   handleUpdate(day){
+    alert(day.id);
     $.ajax({
            url: `/api/v1/days/${day.id}`,
            type: 'PUT',
@@ -16,19 +17,19 @@ var Body = React.createClass({
        })
   },
   updateDays(day) {
-    var days = this.state.days.filter((i) => { return i.id != day.id });
-    days.push(day);
-    this.setState({ days: days });
+    // var days = this.state.days.filter((i) => { return i.id != day.id });2
+    // days.push(day);
+    this.setState({ days: day });
   },
   handleSubmit(day) {
-    var newState = this.state.days.concat(day);
-    this.setState({ days: newState })
+    this.setState({ days: day })
   },
   render(){
     return (
       <div>
-        <AllDays days={this.state.days}
-                 onUpdate={this.handleUpdate} />
+        <AllDays day={this.state.days}
+                 onUpdate={this.handleUpdate}
+                 handleSubmit={this.handleSubmit} />
       </div>
     )
   }

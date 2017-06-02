@@ -1,20 +1,18 @@
 var AllDays = React.createClass({
-  onUpdate(day) {
-    this.props.onUpdate(day);
+  zeroOut(){
+    $.ajax({ url: '/api/v1/days',
+             type: 'POST',
+             data: { day: { count: 0 } },
+             success: (day) => { this.props.handleSubmit(day); } });
   },
   render() {
-    var days = this.props.days.map((day) => {
-      return (
-        <div className='container' key={day.id}>
-          <Day day={day}
-               handleUpdate={this.onUpdate} />
-        </div>
-      )
-    });
-
     return (
       <div className="day-wrapper">
-        {days}
+        <div className='container' key={this.props.day.id}>
+          <Day day={this.props.day}
+               handleUpdate={this.props.onUpdate}
+               zeroOut={this.zeroOut} />
+        </div>
       </div>
     )
   }

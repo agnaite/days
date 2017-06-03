@@ -8,8 +8,8 @@ var Day = React.createClass({
     var minutes = seconds / 60;
     var hours = minutes / 60;
     var days = Math.floor(hours / 24)
-
-    var day = {id: id, count: days};
+///
+    var day = {id: id, count: minutes};
     this.props.handleUpdate(day);
   },
   render(){

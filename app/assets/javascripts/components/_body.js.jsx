@@ -29,7 +29,7 @@ var Body = React.createClass({
   render(){
     return (
       <div>
-        <AllDays day={this.state.days[0]}
+        <AllDays day={this.state.days[this.state.days.length - 1]}
                  days={this.state.days}
                  onUpdate={this.handleUpdate}
                  handleSubmit={this.handleSubmit} />
